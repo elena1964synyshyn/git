@@ -20,7 +20,7 @@ function App() {
           Learn React
         </a>
         {<HelloWorldComponent />}
-        <MyClassComponent />;
+        <MyClassComponent />
       </header>
     </div>
   );
