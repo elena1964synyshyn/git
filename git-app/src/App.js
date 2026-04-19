@@ -1,27 +1,27 @@
-import logo from './logo.svg';
 import HelloWorldComponent from './HelloWorldComponent';
 import './App.css';
 import MyClassComponent from './MyClassComponent';
 
-function App() {
-  const hello = 'Hello World';
+//   const hello = 'Hello World';
 
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <p>{hello}</p>
+//         {<HelloWorldComponent />}
+//         <MyClassComponent />
+//       </header>
+//     </div>
+//   );
+// }
+
+import BookList from './components/BookList';
+
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{hello}</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {<HelloWorldComponent />}
-        <MyClassComponent />
-      </header>
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+      <h1> Бібліотека Стівена Кінга</h1>
+      <BookList />
     </div>
   );
 }
