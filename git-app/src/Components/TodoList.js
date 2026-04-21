@@ -1,61 +1,44 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 
-class TodoList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: '',
-      todos: [],
-    };
-  }
-
-  onChangeHandler = e => {
-    this.setState({ input: e.target.value });
+const TodoList = () => {
+  const [input, setInput] = useState('');
+  const [item, setItem] = useState(['First Element']);
+  const onClickHandler = input => {
+    const updatedElement = [...item, input];
+    setItem(updatedElement);
+    setInput('');
   };
 
-  onClickHandler = () => {
-    if (this.state.input.trim() === '') return;
-    this.setState(prevState => ({
-      todos: [...prevState.todos, prevState.input],
-      input: '',
-    }));
+  const onChangeHandler = e => {
+    const value = e.target.value;
+    setInput(value);
   };
 
-  onKeyDownHandler = e => {
+  const onEnterHandler = e => {
     if (e.key === 'Enter') {
-      this.onClickHandler();
+      const updatedElement = [...item, input];
+      setItem(updatedElement);
+      setInput('');
     }
   };
-
-  render() {
-    const { input, todos } = this.state;
-    return (
-      <div style={{ marginTop: '40px' }}>
-        <h2>To Do List</h2>
-        <input
-          value={input}
-          onChange={this.onChangeHandler}
-          onKeyDown={this.onKeyDownHandler}
-          placeholder="new task"
-        />
-
-        <p> {todos.length}</p>
-        <ul
-          style={{
-            listStyle: 'disc',
-            textAlign: 'left',
-            display: 'inline-block',
-          }}
-        >
-          {todos.map((todo, index) => (
-            <li key={index}>{todo}</li>
-          ))}
-        </ul>
-        <br />
-        <button onClick={this.onClickHandler}>Add TO DO</button>
-      </div>
-    );
-  }
-}
+  return (
+    <>
+      <input
+        onKeyDown={onEnterHandler}
+        onChange={onChangeHandler}
+        value={input}
+      />
+      <ul>
+        {item.map((element, index) => (
+          <li key={`${element}${index}`}>
+            {element}
+            {index}
+          </li>
+        ))}
+      </ul>
+      <button onClick={() => onClickHandler(input)}> add new element</button>
+    </>
+  );
+};
 
 export default TodoList;
