@@ -32,19 +32,27 @@ class TodoList extends Component {
     return (
       <div style={{ marginTop: '40px' }}>
         <h2>To Do List</h2>
-        <p>Кількість завдань: {todos.length}</p>
         <input
           value={input}
           onChange={this.onChangeHandler}
           onKeyDown={this.onKeyDownHandler}
-          placeholder="Введіть завдання..."
+          placeholder="new task"
         />
-        <button onClick={this.onClickHandler}>Додати</button>
-        <ul>
+
+        <p> {todos.length}</p>
+        <ul
+          style={{
+            listStyle: 'disc',
+            textAlign: 'left',
+            display: 'inline-block',
+          }}
+        >
           {todos.map((todo, index) => (
             <li key={index}>{todo}</li>
           ))}
         </ul>
+        <br />
+        <button onClick={this.onClickHandler}>Add TO DO</button>
       </div>
     );
   }
