@@ -18,21 +18,21 @@ const RenderComponent = () => {
 
   // return <div>{[1, 2, 3, 4].map(item => item)}</div>;
 
-  // const firstRenderValue = false;
-  // const secondRenderValue = true;
-  // if (firstRenderValue) {
-  //   return <p>one</p>;
-  // }
-  // if (secondRenderValue) {
-  //   return <p>two</p>;
-  // }
+  const firstRenderValue = false;
+  const secondRenderValue = true;
+  if (firstRenderValue) {
+    return <p>one</p>;
+  }
+  if (secondRenderValue) {
+    return <p>two</p>;
+  }
   return <p>three</p>;
-  // return (
-  //   <>
-  //     {firstRenderValue.length ? <p>I'm firstRenderValue</p> : <p>hello</p>}
-  //     {secondRenderValue && <p>I'm secondRenderValue</p>}
-  //   </>
-  // );
+  return (
+    <>
+      {firstRenderValue.length ? <p>I'm firstRenderValue</p> : <p>hello</p>}
+      {secondRenderValue && <p>I'm secondRenderValue</p>}
+    </>
+  );
 };
 
 export default RenderComponent;
