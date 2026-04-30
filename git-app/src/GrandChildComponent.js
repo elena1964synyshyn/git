@@ -1,14 +1,12 @@
 import React from 'react';
-import GrandChildComponent from './GrandChildComponent';
 
-const ToDosList = props => {
-  console.log(props.newPropTodo);
+const GrandChildComponent = props => {
   return (
-    <>
-      <div>{props.renderOneTodo}</div>
-      <GrandChildComponent newPropTodo={props.renderOneTodo} />
-    </>
+    <div>
+      <p>Name: {props.myName?.name}</p>
+      <p>Array: {props.myNameinArray?.join(', ')}</p>
+    </div>
   );
 };
 
-export default ToDosList;
+export default GrandChildComponent;
