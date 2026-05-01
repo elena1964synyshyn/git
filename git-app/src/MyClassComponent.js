@@ -1,37 +1,41 @@
-import { Component } from 'react';
+// import { Component } from 'react';
 
-class MyClassComponent extends Component {
-  constructor(props) {
-    //   super(props);
-    //   this.state = { name: 'Olena' };
-  }
-  state = {
-    todos: [],
-    input: '',
-  };
-  addTask()=> {
-    const value = e.target.value;
-    this.setState({
-      todos: [...this.state.todos, this.state.input],
-    });
-  }
+// class MyClassComponent extends Component {
+//   state = {
+//     todos: [],
+//     input: '',
+//   };
 
-  onChangeHandler = (e) => {
-    const value = e.target.value;
-    this.setState({ input: value });
-  };
+//   addTask = () => {
+//     this.setState({
+//       todos: [...this.state.todos, this.state.input],
+//       input: '',
+//     });
+//   };
 
-  render() {
-    return (
-      <>
-        <input value={this.state.input} onChange={this.onChangeHandler} />
-        <button onClick={this.addTask}>Add Todo</button>
-        {this.state.todos.map((todo) => (
-          <p>{todo}</p>
-        ))}
-      </>
-    );
-  }
-}
+//   onChangeHandler = e => {
+//     const value = e.target.value;
+//     this.setState({ input: value });
+//   };
 
-export default MyClassComponent;
+//   render() {
+//     return (
+//       <>
+//         <input value={this.state.input} onChange={this.onChangeHandler} />
+//         <button onClick={this.addTask}>Add Todo</button>
+//         {this.state.todos.map((todo, index) => (
+//           <p key={index}>{todo}</p>
+//         ))}
+//       </>
+//     );
+//   }
+// }
+
+import React from 'react';
+const ListItemComponent = props => {
+  <>
+    return <li key={'${props.element}'}>{props.element}</li>;{props.children}
+  </>;
+};
+
+export default ListItemComponent;

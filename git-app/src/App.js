@@ -3,7 +3,7 @@ import RenderComponent from './RenderComponent';
 import CounterComponent from './CounterComponent';
 
 import ToDosList from './ToDosList';
-import List from './List';
+import List from './ListComponent';
 function App() {
   return (
     <div className="app">
