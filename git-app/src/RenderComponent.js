@@ -2,13 +2,6 @@ import React from 'react';
 import GrandChildComponent from './GrandChildComponent';
 
 const RenderComponent = () => {
-  const toDos = [
-    { id: 1, todo: 'firstTodo' },
-    { id: 2, todo: 'secondTodo' },
-    { id: 3, todo: 'thirdTodo' },
-    { id: 4, todo: 'fourthTodo' },
-  ];
-
   const myName = { name: 'Olena' };
   const myNameinArray = ['Olena'];
 
